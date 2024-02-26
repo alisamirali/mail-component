@@ -24,12 +24,16 @@ function App() {
   return (
     <>
       {status.map((statusItem) => (
-        <MailComponent
-          key={statusItem.userName}
-          status={statusItem.status as "In Review" | "Approved" | "Rejected"}
-          description={statusItem.description}
-          userName={statusItem.userName}
-        />
+        <>
+          <MailComponent
+            key={statusItem.userName}
+            status={statusItem.status as "In Review" | "Approved" | "Rejected"}
+            description={statusItem.description}
+            userName={statusItem.userName}
+            notes="This is a note."
+          />
+          <hr />
+        </>
       ))}
     </>
   );
